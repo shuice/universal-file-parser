@@ -1,0 +1,18 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+    <LangVersion>preview</LangVersion>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ironpython2\Src\DLR\Src\Microsoft.Dynamic\AnyPrefix.Microsoft.Dynamic.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\DLR\Src\Microsoft.Scripting.Metadata\AnyPrefix.Microsoft.Scripting.Metadata.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\DLR\Src\Microsoft.Scripting\AnyPrefix.Microsoft.Scripting.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\IronPython.Modules\IronPython.Modules.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\IronPython\IronPython.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\UwpExtension\UwpExtension.csproj" />
+    <ProjectReference Include="..\NeoLua\NeoLua.csproj" />
+  </ItemGroup>
+
+</Project>

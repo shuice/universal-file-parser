@@ -1,0 +1,698 @@
+[
+  {
+    "fileName": "3gf.grammar",
+    "grammarName": "3GF",
+    "extName": "3gf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "aac.grammar",
+    "grammarName": "AAC ADTS",
+    "extName": "aac",
+    "isBuildin": true
+  },
+  {
+    "fileName": "acv.grammar",
+    "grammarName": "Adobe Curve",
+    "extName": "ACV",
+    "isBuildin": true
+  },
+  {
+    "fileName": "afp.grammar",
+    "grammarName": "Advanced Function Presentation",
+    "extName": "afp",
+    "isBuildin": true
+  },
+  {
+    "fileName": "androidbootimage.grammar",
+    "grammarName": "Android Bootimage",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "appledouble.grammar",
+    "grammarName": "AppleDouble",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "archive.grammar",
+    "grammarName": "Archive",
+    "extName": "a,lib",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ase.grammar",
+    "grammarName": "Adobe Swatch Exchange",
+    "extName": "ase",
+    "isBuildin": true
+  },
+  {
+    "fileName": "astc.grammar",
+    "grammarName": "ASTC grammar",
+    "extName": "astc",
+    "isBuildin": true
+  },
+  {
+    "fileName": "audible.grammar",
+    "grammarName": "Audible",
+    "extName": "aa",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bam.grammar",
+    "grammarName": "IESDP - BAM",
+    "extName": "bam",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bar.grammar",
+    "grammarName": "Age of Mythology BAR",
+    "extName": "bar",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bic.grammar",
+    "grammarName": "Civilization saved game",
+    "extName": "bic",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bif.grammar",
+    "grammarName": "BIF file",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "big.grammar",
+    "grammarName": "EA BIG Archive",
+    "extName": "big,viv",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bitmap.grammar",
+    "grammarName": "Windows Bitmaps",
+    "extName": "bmp",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bookmark.grammar",
+    "grammarName": "Apple Bookmark",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "Borderlands_saves.grammar",
+    "grammarName": "Borderlands save",
+    "extName": "sav",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bplist.grammar",
+    "grammarName": "Binary PList",
+    "extName": "plist,nib,sfl,qtz,strings,stringsdict,mom,xcplugindata,xcuserstate,caar,cdm,cam,scriptSuite,webloc,xcplugindata,tracetemplate,etypes,scnp,scn,sks,xcspec,xcplugincache,xcrequiredplugins,colortable,classdescriptions,ibsearchdata,serialized,defaults,tokencache,toc,artworkConfig,foldermetadata,sprite,catalogcolorkeyedarchive,dvtdownloadableindex,pbfilespec,pdIR,mainstageGraph,loopdata,garageSale,curves,mtp,snagproj,lpg,parameterGroup,iconsconf,commandset,as,itxib,idx,mcalc,animationb,ribbonb,netspd,potemplate,pspreset,snagstyles,terraraymeshobject,terra,montage,avenirproj,writeroomtheme,tmCommand,tmPreferences,tmSnippet,tmLanguage,tmMacro,learned,ltxpt,logoistFilterPreset,logoist,style,layout,ticketstore,caches,clr,thrash",
+    "isBuildin": true
+  },
+  {
+    "fileName": "breder.grammar",
+    "grammarName": "AGBreder Binary",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bsdiff.grammar",
+    "grammarName": "BSDIFF patch grammar",
+    "extName": "bsdiff",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bson.grammar",
+    "grammarName": "BSON",
+    "extName": "bson",
+    "isBuildin": true
+  },
+  {
+    "fileName": "bt.grammar",
+    "grammarName": "Binary Terrain",
+    "extName": "bt",
+    "isBuildin": true
+  },
+  {
+    "fileName": "cam.grammar",
+    "grammarName": "CAM Archive",
+    "extName": "cam",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ck1-3.grammar",
+    "grammarName": "CK1, CK2, CK3 grammar",
+    "extName": "CK?",
+    "isBuildin": true
+  },
+  {
+    "fileName": "cpf.grammar",
+    "grammarName": "Canon Preset File",
+    "extName": "CPF",
+    "isBuildin": true
+  },
+  {
+    "fileName": "csv.grammar",
+    "grammarName": "CSV grammar",
+    "extName": "csv",
+    "isBuildin": true
+  },
+  {
+    "fileName": "cv.grammar",
+    "grammarName": "CV Certificate",
+    "extName": "cvcert,cv",
+    "isBuildin": true
+  },
+  {
+    "fileName": "dbase.grammar",
+    "grammarName": "dBASE",
+    "extName": "dbf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "der.grammar",
+    "grammarName": "Receipt",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "dofus.grammar",
+    "grammarName": "Dofus Localization",
+    "extName": "d2i",
+    "isBuildin": true
+  },
+  {
+    "fileName": "dsstore.grammar",
+    "grammarName": "DS_Store",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ducati_dda.grammar",
+    "grammarName": "Ducati DDA (GPS + Analog)",
+    "extName": "dda",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ebustl.grammar",
+    "grammarName": "EBU Subtitling data exchange format",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "efires.grammar",
+    "grammarName": "EFIRES",
+    "extName": "efires",
+    "isBuildin": true
+  },
+  {
+    "fileName": "elf.grammar",
+    "grammarName": "ELF",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "elf32.grammar",
+    "grammarName": "ELF grammar",
+    "extName": "elf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "elm.grammar",
+    "grammarName": "elm-interface",
+    "extName": "elmi",
+    "isBuildin": true
+  },
+  {
+    "fileName": "emf.grammar",
+    "grammarName": "Windows Enhanced MetaFile",
+    "extName": "emf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "eobdata.grammar",
+    "grammarName": "EOB SAV",
+    "extName": "SAV",
+    "isBuildin": true
+  },
+  {
+    "fileName": "esf.grammar",
+    "grammarName": "Total War ESF",
+    "extName": "esf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "esp8266.grammar",
+    "grammarName": "ESP8266 Firmware",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "eudoratoc.grammar",
+    "grammarName": "Eudora Mailbox TOC",
+    "extName": "toc",
+    "isBuildin": true
+  },
+  {
+    "fileName": "flac.grammar",
+    "grammarName": "FLAC",
+    "extName": "flac",
+    "isBuildin": true
+  },
+  {
+    "fileName": "flc.grammar",
+    "grammarName": "FLIC",
+    "extName": "flc,fli",
+    "isBuildin": true
+  },
+  {
+    "fileName": "flv.grammar",
+    "grammarName": "Flash Video",
+    "extName": "flv",
+    "isBuildin": true
+  },
+  {
+    "fileName": "fond.grammar",
+    "grammarName": "FOND",
+    "extName": "dat",
+    "isBuildin": true
+  },
+  {
+    "fileName": "fp5.grammar",
+    "grammarName": "FileMaker fp5 and fp3",
+    "extName": "fp5,FP5,fp3,FP3",
+    "isBuildin": true
+  },
+  {
+    "fileName": "fpk.grammar",
+    "grammarName": "Civilization IV FPK grammar",
+    "extName": "fpk",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ftl.grammar",
+    "grammarName": "FTL save",
+    "extName": "sav",
+    "isBuildin": true
+  },
+  {
+    "fileName": "gcd.grammar",
+    "grammarName": "Fallout GCD",
+    "extName": "GCD",
+    "isBuildin": true
+  },
+  {
+    "fileName": "gif.grammar",
+    "grammarName": "GIF (full)",
+    "extName": "gif",
+    "isBuildin": true
+  },
+  {
+    "fileName": "glb.grammar",
+    "grammarName": "GLB (Binary glTF)",
+    "extName": "glb",
+    "isBuildin": true
+  },
+  {
+    "fileName": "gnutar.grammar",
+    "grammarName": "TAR",
+    "extName": "tar",
+    "isBuildin": true
+  },
+  {
+    "fileName": "gzip.grammar",
+    "grammarName": "GZIP",
+    "extName": "gz",
+    "isBuildin": true
+  },
+  {
+    "fileName": "h264.grammar",
+    "grammarName": "H264",
+    "extName": "h264",
+    "isBuildin": true
+  },
+  {
+    "fileName": "HyperCardStack.grammar",
+    "grammarName": "HyperCard Stack",
+    "extName": "stak",
+    "isBuildin": true
+  },
+  {
+    "fileName": "icc.grammar",
+    "grammarName": "ICC Profiles",
+    "extName": "icc",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ijpds.grammar",
+    "grammarName": "Inkjet Printer Data Stream",
+    "extName": "ijpds,ijp",
+    "isBuildin": true
+  },
+  {
+    "fileName": "innodb_data.grammar",
+    "grammarName": "InnoDB IBD",
+    "extName": "ibd",
+    "isBuildin": true
+  },
+  {
+    "fileName": "iptc.grammar",
+    "grammarName": "IPTC grammar",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "itc.grammar",
+    "grammarName": "ITC grammar",
+    "extName": "itc",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ITCHv41.grammar",
+    "grammarName": "NASDAQ TotalView-ITCH 4.1",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "jpeg.grammar",
+    "grammarName": "JPEG",
+    "extName": "jpg,jpeg",
+    "isBuildin": true
+  },
+  {
+    "fileName": "kipr.grammar",
+    "grammarName": "KIPR grammar",
+    "extName": "kipr",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ktx.grammar",
+    "grammarName": "KTX grammar",
+    "extName": "ktx",
+    "isBuildin": true
+  },
+  {
+    "fileName": "LaxMan.grammar",
+    "grammarName": "LaxMan",
+    "extName": "lax",
+    "isBuildin": true
+  },
+  {
+    "fileName": "libpcap.grammar",
+    "grammarName": "libpcap",
+    "extName": "pcap",
+    "isBuildin": true
+  },
+  {
+    "fileName": "lnx.grammar",
+    "grammarName": "LNX grammar",
+    "extName": "lnx",
+    "isBuildin": true
+  },
+  {
+    "fileName": "luac.grammar",
+    "grammarName": "LUAC 5.1/32bit",
+    "extName": "luac",
+    "isBuildin": true
+  },
+  {
+    "fileName": "lut.grammar",
+    "grammarName": "LUT grammar",
+    "extName": "LUT",
+    "isBuildin": true
+  },
+  {
+    "fileName": "mach-o.grammar",
+    "grammarName": "Mach-O",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "MBR.grammar",
+    "grammarName": "Master Boot Record Grammar",
+    "extName": "dd, img, raw",
+    "isBuildin": true
+  },
+  {
+    "fileName": "midi.grammar",
+    "grammarName": "MIDI",
+    "extName": "mid, kipr",
+    "isBuildin": true
+  },
+  {
+    "fileName": "mobi.grammar",
+    "grammarName": "Mobi",
+    "extName": "azw3,mobi",
+    "isBuildin": true
+  },
+  {
+    "fileName": "mp3.grammar",
+    "grammarName": "MP3",
+    "extName": "mp3",
+    "isBuildin": true
+  },
+  {
+    "fileName": "msgpack.grammar",
+    "grammarName": "Messagepack",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "NamedBinaryTag.grammar",
+    "grammarName": "Named Binary Tag",
+    "extName": "dat",
+    "isBuildin": true
+  },
+  {
+    "fileName": "opentype.grammar",
+    "grammarName": "OpenType",
+    "extName": "otf,ttf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pcap.grammar",
+    "grammarName": "libpcap",
+    "extName": "pcap",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pcapng.grammar",
+    "grammarName": "PCAPNG",
+    "extName": "pcapng",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pcx.grammar",
+    "grammarName": "PCX Images",
+    "extName": "pcx",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pe.grammar",
+    "grammarName": "Portable Executable",
+    "extName": "exe,dll",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pgrescopy.grammar",
+    "grammarName": "Postgres COPY BINARY Format",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "PMDRedRomMap.grammar",
+    "grammarName": "PMD Red",
+    "extName": "gba",
+    "isBuildin": true
+  },
+  {
+    "fileName": "png.grammar",
+    "grammarName": "PNG Images",
+    "extName": "png",
+    "isBuildin": true
+  },
+  {
+    "fileName": "PokemonROMData.grammar",
+    "grammarName": "Pokémon ROM File",
+    "extName": "GBA",
+    "isBuildin": true
+  },
+  {
+    "fileName": "PS1SaveGames.grammar",
+    "grammarName": "PS1 Save Games",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "psgradients.grammar",
+    "grammarName": "Gradients grammar",
+    "extName": "grd",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pud.grammar",
+    "grammarName": "Warcraft II PUD",
+    "extName": "pud",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pvr.grammar",
+    "grammarName": "PVR file header V2",
+    "extName": "pvr",
+    "isBuildin": true
+  },
+  {
+    "fileName": "pyc.grammar",
+    "grammarName": "Python Bytecode",
+    "extName": "pyc,pyo",
+    "isBuildin": true
+  },
+  {
+    "fileName": "qt.grammar",
+    "grammarName": "QuickTime and MP4",
+    "extName": "mov,mp4,m4a,m4v,mpg4",
+    "isBuildin": true
+  },
+  {
+    "fileName": "RegistryHive.grammar",
+    "grammarName": "Registry hive",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "scf.grammar",
+    "grammarName": "SCF",
+    "extName": "SCF",
+    "isBuildin": true
+  },
+  {
+    "fileName": "sgi.grammar",
+    "grammarName": "SGI",
+    "extName": "sgi",
+    "isBuildin": true
+  },
+  {
+    "fileName": "shp.grammar",
+    "grammarName": "Shape File",
+    "extName": "shp",
+    "isBuildin": true
+  },
+  {
+    "fileName": "shx.grammar",
+    "grammarName": "Shape File Index",
+    "extName": "shx",
+    "isBuildin": true
+  },
+  {
+    "fileName": "SimCity2000.grammar",
+    "grammarName": "SimCity 2000 Saved City",
+    "extName": ".sc2",
+    "isBuildin": true
+  },
+  {
+    "fileName": "stdf.grammar",
+    "grammarName": "Standard Test Data Format v4",
+    "extName": "STDF STD",
+    "isBuildin": true
+  },
+  {
+    "fileName": "stl.grammar",
+    "grammarName": "STereoLithography",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "swf.grammar",
+    "grammarName": "SWF grammar",
+    "extName": "swf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "tibia-map.grammar",
+    "grammarName": "Tibia *.map file",
+    "extName": "map",
+    "isBuildin": true
+  },
+  {
+    "fileName": "tiff.grammar",
+    "grammarName": "TIFF",
+    "extName": "tif,tiff",
+    "isBuildin": true
+  },
+  {
+    "fileName": "trd.grammar",
+    "grammarName": "TRD",
+    "extName": "trd",
+    "isBuildin": true
+  },
+  {
+    "fileName": "typelib.grammar",
+    "grammarName": "TypeLib grammar",
+    "extName": "tlb",
+    "isBuildin": true
+  },
+  {
+    "fileName": "uImage.grammar",
+    "grammarName": "uImage",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "urf.grammar",
+    "grammarName": "Apple Unirast",
+    "extName": "urf",
+    "isBuildin": true
+  },
+  {
+    "fileName": "utf8.grammar",
+    "grammarName": "UTF-8",
+    "extName": "txt",
+    "isBuildin": true
+  },
+  {
+    "fileName": "VoiceDescription.grammar",
+    "grammarName": "VoiceDescription",
+    "extName": "",
+    "isBuildin": true
+  },
+  {
+    "fileName": "wav.grammar",
+    "grammarName": "Windows Wave",
+    "extName": "wav",
+    "isBuildin": true
+  },
+  {
+    "fileName": "xbc.grammar",
+    "grammarName": "XBC grammar",
+    "extName": "xbc",
+    "isBuildin": true
+  },
+  {
+    "fileName": "xeroximg.grammar",
+    "grammarName": "IMG grammar",
+    "extName": "IMG",
+    "isBuildin": true
+  },
+  {
+    "fileName": "ZeldaSolarusDX.grammar",
+    "grammarName": "Zelda solarus DX saved games",
+    "extName": "dat",
+    "isBuildin": true
+  },
+  {
+    "fileName": "zip.grammar",
+    "grammarName": "ZIP",
+    "extName": "zip",
+    "isBuildin": true
+  },
+  {
+    "fileName": "zjstream.grammar",
+    "grammarName": "Zj-Stream Grammar",
+    "extName": "prn",
+    "isBuildin": true
+  }
+]

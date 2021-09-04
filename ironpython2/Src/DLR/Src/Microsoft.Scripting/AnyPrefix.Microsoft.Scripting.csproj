@@ -1,0 +1,33 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+
+    <Platforms>AnyCPU;x64</Platforms>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|x64'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup Condition=" '$(IsFullFramework)' == 'true' ">
+    <Reference Include="System.Configuration" Condition=" $(Features.Contains('FEATURE_CONFIGURATION')) " />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(IsFullFramework)' != 'true' ">
+    <PackageReference Include="System.Configuration.ConfigurationManager" Version="4.7.0" />
+    <PackageReference Include="System.CodeDom" Version="4.7.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\UwpExtension\UwpExtension.csproj" />
+  </ItemGroup>
+
+
+
+
+  <Import Project="$(AfterTargetFiles)" />
+
+  <Target Name="AfterBuildEnds" AfterTargets="AfterBuild" DependsOnTargets="$(AfterTargets)" />
+
+</Project>

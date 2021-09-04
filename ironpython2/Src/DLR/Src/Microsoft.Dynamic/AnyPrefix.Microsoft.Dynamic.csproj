@@ -1,0 +1,37 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <RootNamespace>AnyPrefix.Microsoft.Scripting</RootNamespace>
+    <Platforms>AnyCPU;x64</Platforms>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|x64'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\UwpExtension\UwpExtension.csproj" />
+    <ProjectReference Include="..\Microsoft.Scripting.Metadata\AnyPrefix.Microsoft.Scripting.Metadata.csproj" Condition=" $(Features.Contains('FEATURE_METADATA_READER')) " />
+    <ProjectReference Include="..\Microsoft.Scripting\AnyPrefix.Microsoft.Scripting.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition=" '$(IsFullFramework)' == 'true' ">
+    <Reference Include="System.Configuration" Condition=" $(Features.Contains('FEATURE_CONFIGURATION')) " />
+    <Reference Include="System.Runtime.Remoting" Condition=" $(Features.Contains('FEATURE_REMOTING')) " />
+    <Reference Include="System.Xaml" Condition=" $(Features.Contains('FEATURE_WPF')) " />
+  </ItemGroup>
+
+ 
+
+  <ItemGroup>
+    <Compile Remove="**/*.netfx.cs" />
+    <Compile Remove="**/*.netcoreapp.cs" />
+    <Compile Include="**/*.netfx.cs" Condition=" '$(IsFullFramework)' == 'true' " />
+    <Compile Include="**/*.netcoreapp.cs" Condition=" '$(IsFullFramework)' != 'true' " />
+  </ItemGroup>
+
+
+
+</Project>

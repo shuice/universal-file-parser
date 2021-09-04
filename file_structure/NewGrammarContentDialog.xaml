@@ -1,0 +1,72 @@
+﻿<ContentDialog
+    x:Class="file_structure.NewGrammarContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:file_structure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Input File Name:"
+    PrimaryButtonText="Cancel"
+    SecondaryButtonText="OK"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    Loaded="ContentDialog_Loaded"
+    >
+
+    <Grid>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition/>
+                <RowDefinition/>
+                <RowDefinition/>
+            </Grid.RowDefinitions>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="3*"/>
+                <ColumnDefinition Width="7*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="File Name:"
+                VerticalAlignment="Center"
+                TextAlignment="Right"
+                Margin="0,0,20,0"
+                />
+            <TextBox
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="{x:Bind fileName, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                TextChanged="TextBox_TextChanged"
+                x:Name="TextBox_FileName"
+                />
+            <TextBlock
+                Grid.Row="0"
+                Grid.Column="2"
+                Text=".grammar"
+                VerticalAlignment="Center"
+                Margin="2,0,0,0"
+                />
+            <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Right"
+                Margin="40, 5, 0, 0"
+                Text="{x:Bind errMsg, Mode=OneWay}"
+                Foreground="Red"
+                />
+            <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Grid.ColumnSpan="3"
+                HorizontalAlignment="Right"
+                Margin="40, 10, 0, 0"
+                Text="The file name cannot be modified in the future."
+                Foreground="Gray"
+                />
+        </Grid>
+    </Grid>
+</ContentDialog>

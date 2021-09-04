@@ -1,0 +1,38 @@
+﻿<local:ElementEditUserControl
+    x:Class="file_structure.ElementEditNotSupported"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:file_structure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    mc:Ignorable="d"
+    d:DesignHeight="500"
+    d:DesignWidth="600">
+    <ScrollViewer
+        VerticalScrollMode="Enabled"
+        >
+        <ContentControl  SizeChanged="ParentContentControl_SizeChanged">
+            <Grid
+            Margin="20"
+            >
+                <Grid.RowDefinitions>
+                    <RowDefinition/>
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition/>
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition/>
+                    <ColumnDefinition Width="Auto"/>
+                    <ColumnDefinition/>
+                </Grid.ColumnDefinitions>
+                
+                <TextBlock                                      
+                    Grid.Row="1"
+                    Grid.Column="1"
+                    Text="111"
+                    x:Name="TextBlock_UnsupportedTip"/>
+
+            </Grid>
+        </ContentControl>
+    </ScrollViewer>
+</local:ElementEditUserControl>

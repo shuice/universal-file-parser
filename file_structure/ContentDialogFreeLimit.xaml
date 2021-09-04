@@ -1,0 +1,25 @@
+﻿<ContentDialog
+    x:Class="NetTools.ContentDialogFreeLimit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:NetTools"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title=""
+    
+    SecondaryButtonText="Purchase"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    >
+
+    <Grid>
+        <StackPanel VerticalAlignment="Center">
+        <StackPanel Orientation="Horizontal" >
+            <TextBlock>The dialog will automatically disappear in</TextBlock>
+            <TextBlock x:Name="text_block_seconds" Margin="5, 0" FontWeight="Bold" Foreground="{StaticResource SystemAccentColor}"></TextBlock>
+            <TextBlock>seconds.</TextBlock>            
+        </StackPanel>
+            <TextBlock Margin="0,10" HorizontalAlignment="Right" Foreground="{ThemeResource SystemBaseLowColor}">Purchase this app to permanently remove the dialog.</TextBlock>
+        </StackPanel>
+    </Grid>
+</ContentDialog>

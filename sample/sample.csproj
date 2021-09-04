@@ -1,0 +1,31 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="5.0.0" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\ironpython2\Src\DLR\Src\Microsoft.Dynamic\AnyPrefix.Microsoft.Dynamic.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\DLR\Src\Microsoft.Scripting.Metadata\AnyPrefix.Microsoft.Scripting.Metadata.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\DLR\Src\Microsoft.Scripting\AnyPrefix.Microsoft.Scripting.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\IronPython.Modules\IronPython.Modules.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\IronPython\IronPython.csproj" />
+    <ProjectReference Include="..\ironpython2\Src\UwpExtension\UwpExtension.csproj" />
+    <ProjectReference Include="..\kernel\kernel.csproj" />
+    <ProjectReference Include="..\NeoLua\NeoLua.csproj" />
+  </ItemGroup>
+
+<ItemGroup>
+  <Reference Include="Windows.Foundation.UniversalApiContract">
+    <HintPath>E:\Windows Kits\10\References\10.0.19041.0\Windows.Foundation.UniversalApiContract\10.0.0.0\Windows.Foundation.UniversalApiContract.winmd</HintPath>
+  </Reference>
+</ItemGroup>
+
+
+</Project>

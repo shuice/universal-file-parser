@@ -1,0 +1,32 @@
+﻿<Page
+    x:Class="file_structure.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:file_structure"
+    xmlns:HexEditor="using:HexEditor"    
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:common="using:Common"    
+    xmlns:muxc="using:Microsoft.UI.Xaml.Controls"
+    mc:Ignorable="d"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"
+    Loaded="Page_Loaded"
+    >
+    <Grid>
+
+        <muxc:TabView        
+            TabWidthMode="SizeToContent"
+            AllowDrop="False"
+            CanDragTabs="False"
+            CanReorderTabs="False"     
+            HorizontalAlignment="Stretch"
+            VerticalAlignment="Stretch"
+            IsAddTabButtonVisible="False"
+            x:Name="TabView_Main"              
+            BorderBrush="{ThemeResource SystemBaseMediumLowColor}"
+            BorderThickness="0,0,0,1"
+            SelectionChanged="TabView_Main_SelectionChanged"
+            >
+        </muxc:TabView>
+    </Grid>
+</Page>

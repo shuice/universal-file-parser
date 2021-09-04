@@ -1,0 +1,101 @@
+﻿<Page
+    x:Class="file_structure.GrammarEditScript"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:file_structure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:muxc="using:Microsoft.UI.Xaml.Controls" xmlns:common="using:Common"
+    mc:Ignorable="d"
+    Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <common:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <common:InvertBooleanConverter x:Key="InvertBooleanConverter"/>
+        <common:InvertBooleanToVisibilityConverter x:Key="InvertBooleanToVisibilityConverter"/>
+        <common:InvertBooleanToDoubleConverter x:Key="InvertBooleanToDoubleConverter"/>
+        <common:BooleanToDoubleConverter x:Key="BooleanToDoubleConverter"/>
+
+            <DataTemplate x:Key="FolderTemplate" x:DataType="local:TreeViewNodeDataItem">
+                <muxc:TreeViewItem AutomationProperties.Name="{x:Bind text}"
+                                ItemsSource="{x:Bind childrenItems}" 
+                                IsExpanded="True"
+                                ContextRequested="TreeViewItem_ContextRequested"   
+                                   >
+                    <StackPanel Orientation="Horizontal">                        
+                        <TextBlock Text="{x:Bind text, Mode=OneWay}" />
+                    </StackPanel>                    
+                </muxc:TreeViewItem>                
+            </DataTemplate>
+
+        <DataTemplate x:Key="FileTemplate" x:DataType="local:TreeViewNodeDataItem">
+                <muxc:TreeViewItem AutomationProperties.Name="{x:Bind text}"
+                                   ContextRequested="TreeViewItem_ContextRequested"
+                                   >
+                    <StackPanel Orientation="Horizontal">                        
+                        <TextBlock Text="{x:Bind text, Mode=OneWay}"/>
+                    </StackPanel>
+                </muxc:TreeViewItem>
+            </DataTemplate>
+
+            <local:ExplorerItemTemplateSelector x:Key="ExplorerItemTemplateSelector"
+                FolderTemplate="{StaticResource FolderTemplate}"
+                FileTemplate="{StaticResource FileTemplate}" />
+
+
+    </Page.Resources>
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="300"/>
+            <ColumnDefinition Width="7*"/>        
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.Column="0" Grid.ColumnSpan="2" Orientation="Horizontal"  Margin="5">
+            <AppBarButton Icon="Back" Label="Back" Width="100" Click="Button_Back_Click"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Add" Label="New Script" Width="100" Click="Button_New_Click"/>                        
+            <AppBarButton Icon="Delete" Label="Delete"  Click="Button_Delete_Click"  Width="100" IsEnabled="{x:Bind script_selected, Mode=OneWay}"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Edit" Label="Script Info"  Click="Button_ScriptInfo_Click"  Width="100" IsEnabled="{x:Bind script_selected, Mode=OneWay}"/>
+        </StackPanel>
+        <Grid
+            Grid.Row="1"
+            Grid.Column="0"
+            BorderBrush="Gray"
+            BorderThickness="1"
+             Margin="5"
+            >
+            <muxc:TreeView 
+            x:Name="TreeView_EmbedScript"
+            ItemInvoked="TreeView_EmbedScript_ItemInvoked"
+            ItemsSource="{x:Bind treeViewDataSource}"
+            ItemTemplateSelector="{StaticResource ExplorerItemTemplateSelector}" 
+            />
+        </Grid>
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            BorderBrush="Gray"
+            Margin="5"
+            >
+        <TextBox           
+            
+            AcceptsReturn="True"
+            x:Name="TextBox_Source"
+            Visibility="{x:Bind script_selected, Converter={StaticResource BooleanToVisibilityConverter}, Mode=OneWay}"            
+            />
+
+        <TextBlock            
+            VerticalAlignment="Center"
+            HorizontalAlignment="Center"
+            Text="Create or select a script."
+            Visibility="{x:Bind script_selected, Converter={StaticResource InvertBooleanToVisibilityConverter}, Mode=OneWay}"
+            />
+        </Grid>
+
+    </Grid>
+</Page>

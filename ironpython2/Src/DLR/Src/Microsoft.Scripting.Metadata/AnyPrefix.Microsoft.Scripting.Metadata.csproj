@@ -1,0 +1,27 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netstandard2.0</TargetFrameworks>
+    <AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+    <DefineConstants>$(DefineConstants);CCI</DefineConstants>
+    <Platforms>AnyCPU;x64</Platforms>
+    <AssemblyName>AnyPrefix.Microsoft.Scripting.Metadata</AssemblyName>
+    <RootNamespace>AnyPrefix.Microsoft.Scripting.Metadata</RootNamespace>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(TargetFramework)|$(Platform)'=='Debug|netstandard2.0|x64'">
+    <GenerateSerializationAssemblies>Auto</GenerateSerializationAssemblies>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\..\UwpExtension\UwpExtension.csproj" />
+    <ProjectReference Include="..\Microsoft.Scripting\AnyPrefix.Microsoft.Scripting.csproj" />
+  </ItemGroup>
+
+
+
+  <Import Project="$(AfterTargetFiles)" />
+
+  <Target Name="AfterBuildEnds" AfterTargets="AfterBuild" DependsOnTargets="$(AfterTargets)" />
+
+</Project>

@@ -1,0 +1,115 @@
+﻿<ContentDialog
+    x:Class="file_structure.GrammarInfContentDialog"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:file_structure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d"
+    Title="Grammar Information"
+    PrimaryButtonText="Cancel"
+    SecondaryButtonText="OK"
+    PrimaryButtonClick="ContentDialog_PrimaryButtonClick"
+    SecondaryButtonClick="ContentDialog_SecondaryButtonClick"
+    Width="500"
+    Loaded="ContentDialog_Loaded"
+    >
+
+    <Grid Width="450">
+        <Grid.RowDefinitions>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="3*"/>
+            <ColumnDefinition Width="7*"/>
+        </Grid.ColumnDefinitions>
+        <TextBlock
+                Grid.Row="0"
+                Grid.Column="0"
+                Text="Name:"
+                VerticalAlignment="Center"
+                TextAlignment="Right"
+                Margin="0,0,20,0"
+                />
+        <TextBox
+                Grid.Row="0"
+                Grid.Column="1"
+                Text="{x:Bind grammarName, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                Margin="0,5"
+                x:Name="TextBox_GrammarName"
+                />
+
+        <TextBlock
+                Grid.Row="1"
+                Grid.Column="0"
+                Text="Author:"
+                VerticalAlignment="Center"
+                TextAlignment="Right"
+                Margin="0,0,20,0"
+                />
+        <TextBox
+                Grid.Row="1"
+                Grid.Column="1"
+                Text="{x:Bind author, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                Margin="0,5"
+                />
+
+        <TextBlock
+                Grid.Row="2"
+                Grid.Column="0"
+                Text="Email:"
+                VerticalAlignment="Center"
+                TextAlignment="Right"
+                Margin="0,0,20,0"
+                />
+        <TextBox
+                Grid.Row="2"
+                Grid.Column="1"
+                Text="{x:Bind email, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                Margin="0,5"
+                />
+
+        <TextBlock
+                Grid.Row="3"
+                Grid.Column="0"
+                Text="Extension:"
+                VerticalAlignment="Center"
+                TextAlignment="Right"
+                Margin="0,0,20,0"
+                />
+        <TextBox
+                Grid.Row="3"
+                Grid.Column="1"
+                Text="{x:Bind extension, Mode=TwoWay}"
+                VerticalAlignment="Center"
+                Margin="0,5"
+                PlaceholderText="zip,rar,7z"
+                />
+
+        <TextBlock
+                Grid.Row="4"
+                Grid.Column="0"
+                Text="Description:"
+                VerticalAlignment="Top"
+                TextAlignment="Right"
+                Margin="0,5,20,0"
+                />
+        <TextBox
+                Grid.Row="4"
+                Grid.Column="1"
+                Text="{x:Bind description, Mode=TwoWay}"
+                Height="100"
+                VerticalAlignment="Center"
+                AcceptsReturn="True"
+                Margin="0,5"
+                TextWrapping="Wrap"
+                />
+    </Grid>
+</ContentDialog>

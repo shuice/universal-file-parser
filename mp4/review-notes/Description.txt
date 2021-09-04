@@ -1,0 +1,7 @@
+This is a software for learning MP4/M4A/MOV file format, it has the following characteristics
+1. Use a tree structure to display the file structure
+2. Special colors show the nodes that need attention
+3. Click the tree node to highlight its corresponding content in hexadecimal
+3. Click hexadecimal to automatically display the corresponding position in the tree structure
+
+Usage restrictions for free users:Can not browse elements with a level greater than 3.

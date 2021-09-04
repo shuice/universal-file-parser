@@ -1,0 +1,41 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+		<AssemblyName>Neo.Lua</AssemblyName>
+		<RootNamespace>Neo.IronLua</RootNamespace>
+		<TargetFrameworks>netstandard2.0</TargetFrameworks>
+		<GenerateDocumentationFile>true</GenerateDocumentationFile>
+		<Description>A Lua implementation for the Dynamic Language Runtime (DLR).</Description>
+		<PackageId>NeoLua</PackageId>
+		<PackageReleaseNotes>A Lua implementation for the Dynamic Language Runtime (DLR).
+
+NeoLua is an implementation of the Lua language. Currently the implementation is on the level of Lua 
+5.3 http://www.lua.org/manual/5.3/manual.html). The goal is to match the reference of the C-Lua implementation and combine this with full .net framework support.
+
+NeoLua is implemented in C# and uses the Dynamic Language Runtime. It therefore integrates very well with the .net framework.
+
+This library contains the desktop parts of the lua implementation.</PackageReleaseNotes>
+    <PackageTags>Lua C# .net DLR Dynamic Language</PackageTags>
+    <NeutralLanguage></NeutralLanguage>
+  
+  </PropertyGroup>	
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CSharp" Version="4.5.0" />
+  </ItemGroup>	
+  <ItemGroup>
+    <ProjectReference Include="..\ironpython2\Src\UwpExtension\UwpExtension.csproj" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Update="Properties\Resources.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Update="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

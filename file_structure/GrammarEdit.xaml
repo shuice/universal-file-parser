@@ -1,0 +1,148 @@
+﻿<Page
+    x:Class="file_structure.GrammarEdit"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:file_structure"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:controls="using:Microsoft.Toolkit.Uwp.UI.Controls"
+    xmlns:common="using:Common"    
+    mc:Ignorable="d"
+    Loaded="Page_Loaded"
+    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+
+    <Page.Resources>
+        <common:BooleanToVisibilityConverter x:Key="BooleanToVisibilityConverter"/>
+        <common:InvertBooleanConverter x:Key="InvertBooleanConverter"/>
+        <common:InvertBooleanToVisibilityConverter x:Key="InvertBooleanToVisibilityConverter"/>
+        <common:InvertBooleanToDoubleConverter x:Key="InvertBooleanToDoubleConverter"/>
+        <common:BooleanToDoubleConverter x:Key="BooleanToDoubleConverter"/>
+
+    </Page.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>            
+            <RowDefinition Height="Auto"/>
+            <RowDefinition/>            
+            <RowDefinition Height="0"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition/>            
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <StackPanel Grid.Row="0" Grid.ColumnSpan="2" Orientation="Horizontal"  Margin="5">
+            <AppBarButton Icon="Back" Label="Back" Width="100" Click="Button_Back_Click"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Save" Label="Save" Width="100" Click="Button_Save_Click"/>
+            <AppBarSeparator/>
+            <AppBarButton Icon="Add" Label="Add Structure" Width="100" Click="Button_Add_Structure_Click"/>
+            <AppBarButton Icon="Delete" Label="Delete Selected" Width="100" Click="Button_Del_Selected_Click"
+                          IsEnabled="{x:Bind btn_enabled_delete, Mode=OneWay}"
+                          />
+            <AppBarSeparator/>
+            <AppBarButton Icon="Up" Label="Move Up" Width="100" Click="Button_MoveUp_Selected_Click"
+                          IsEnabled="{x:Bind btn_enabled_move_up, Mode=OneWay}"
+                          />
+            <AppBarButton Icon="Download" Label="Move Down" Width="100" Click="Button_MoveDown_Selected_Click"
+                          IsEnabled="{x:Bind btn_enabled_move_down, Mode=OneWay}"
+                          />
+            <AppBarButton Icon="Play" Label="Set Start" Width="100" Click="Button_MoveDown_SetStart_Click"
+                          IsEnabled="{x:Bind btn_enabeld_set_start, Mode=OneWay}"
+                          />
+            <AppBarSeparator/>
+            <AppBarButton Label="Script" Width="100" Click="Button_Grammar_Script_Click">
+                <AppBarButton.Icon>
+                    <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xE97E;" />
+                </AppBarButton.Icon>
+            </AppBarButton>
+            <AppBarButton Icon="Important" Label="Grammar Inf" Width="100" Click="Button_Grammar_Inf_Click"/>            
+            <AppBarButton Icon="Share" Label="Share" Width="100" Click="Button_Share_Click"/>
+            <AppBarButton Icon="Contact" Label="Contact Author" Width="100" Click="Button_Contact_Author_Click"/>
+        </StackPanel>
+
+        <controls:DataGrid   
+            BorderBrush="Gray"
+            BorderThickness="1"
+            Grid.Column="0"
+            Grid.Row="1"            
+            x:Name="data_grid_tree"
+            VerticalAlignment="Stretch"
+            HorizontalAlignment="Stretch"
+            HorizontalScrollBarVisibility="Visible"
+            VerticalScrollBarVisibility="Visible"
+            AlternatingRowBackground="#F7F7F7"            
+            AreRowDetailsFrozen="False"
+            AreRowGroupHeadersFrozen="True"
+            AutoGenerateColumns="False"
+            CanUserSortColumns="True"
+            CanUserReorderColumns="False"
+            CanUserResizeColumns="True"
+            ColumnHeaderHeight="32"                                                                       
+            GridLinesVisibility="All"
+            HeadersVisibility="Column"
+            IsReadOnly="False"
+            RowDetailsVisibilityMode="Collapsed"                          
+            RowGroupHeaderPropertyNameAlternative="Range"
+            SelectionChanged="data_grid_element_base_SelectionChanged"
+            ItemsSource="{x:Bind appData.editingGrammarElements, Mode=OneWay}"
+            ContextRequested="data_grid_tree_ContextRequested"            
+            DoubleTapped="data_grid_tree_DoubleTapped"
+            Margin="5"
+        >
+            <controls:DataGrid.Resources>
+                <SolidColorBrush x:Key="DataGridCellFocusVisualPrimaryBrush" Color="Transparent"/>
+                <SolidColorBrush x:Key="DataGridCellFocusVisualSecondaryBrush" Color="Transparent"/>
+                <Style x:Key="DataGridCellLeft" TargetType="controls:DataGridCell">
+                    <Setter Property="HorizontalContentAlignment" Value="Left" />
+                </Style>
+                <Style x:Key="DataGridCellCenter" TargetType="controls:DataGridCell">
+                    <Setter Property="HorizontalContentAlignment" Value="Center" />
+                </Style>
+                <Style x:Key="DataGridCellRight" TargetType="controls:DataGridCell">
+                    <Setter Property="HorizontalContentAlignment" Value="Right" />
+                </Style>
+                <DataTemplate x:Key="TreeTemplate" x:DataType="local:ElementBaseNode" >
+                    <StackPanel  Orientation="Horizontal" >
+                        <Border Width="{x:Bind levelOffset}"/>
+                        <Button Margin="2"
+                                Padding="2"                                
+                                Click="Button_Click_Toggle_Expand"
+                                Background="Transparent"
+                                IsEnabled="{x:Bind hasChildren, Mode=OneWay}"
+                                Opacity="{x:Bind hasChildren, Mode=OneWay, Converter={StaticResource BooleanToDoubleConverter}}">
+                            <StackPanel 
+                                VerticalAlignment="Center" 
+                                HorizontalAlignment="Center"
+                                >
+                                <TextBlock FontFamily="Segoe MDL2 Assets" Text="{x:Bind buttonSymbol, Mode=OneWay}" FontSize="15" />
+                            </StackPanel>
+                        </Button>
+                        <FontIcon FontFamily="{ThemeResource SymbolThemeFontFamily}" Glyph="&#xEDB0;" Foreground="{x:Bind iconColorBrush, Mode=OneWay}" />
+                        <TextBlock  VerticalAlignment="Center" Text="{x:Bind name, Mode=OneWay}" FontWeight="{x:Bind nameFontWeight, Mode=OneWay}" Foreground="{x:Bind textColorBrush, Mode=OneWay}"  />
+                    </StackPanel>
+                </DataTemplate>
+                <DataTemplate x:Key="TypeTemplate" x:DataType="local:ElementBaseNode" >
+                    <StackPanel  Orientation="Horizontal" >                       
+                        <TextBlock Margin="10,0,0,0"  VerticalAlignment="Center" Text="{x:Bind type, Mode=OneWay}" Foreground="{x:Bind textColorBrush, Mode=OneWay}"  />
+                    </StackPanel>
+                </DataTemplate>
+            </controls:DataGrid.Resources>
+
+            <controls:DataGrid.Columns>
+                <controls:DataGridTemplateColumn Width="7*"  MinWidth="85"  Header="Element" CellTemplate="{StaticResource TreeTemplate}" CellStyle="{StaticResource DataGridCellLeft}"/>
+                <controls:DataGridTemplateColumn Width="3*"  MinWidth="20"  Header="Type" CellTemplate="{StaticResource TypeTemplate}" CellStyle="{StaticResource DataGridCellLeft}"/>
+            </controls:DataGrid.Columns>
+        </controls:DataGrid>
+
+        <Grid
+            Grid.Row="1"
+            Grid.Column="1"
+            x:Name="Grid_Element_Edit_Container"
+            BorderBrush="Gray"
+            BorderThickness="1"
+             Margin="5"
+            >
+            
+        </Grid>
+    </Grid>
+</Page>

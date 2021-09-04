@@ -1,0 +1,104 @@
+*_name_S*
+
+# Output directories
+obj/
+bin/
+/bin/
+/Stage
+/Packages
+/.vscode
+
+#Backup files
+*.bak
+
+# Temporary VS files
+*.suo
+*.csproj.user
+*.wixproj.user
+*.pidb
+*.db
+*.opendb
+*.lock.json
+*.nuget.targets
+launchSettings.json
+
+# NuGet Packages
+packages/*
+
+# Visual Studio 2015 cache/options directory
+.vs/
+
+# Generated files
+TestResult.xml
+Solutions/TestResults/
+/Src/IronPythonTest/runsettings*.xml
+
+# TODO - testing scripts should not create these files
+Src/StdLib/Lib/@test_*
+
+# created by CPython tests
+Src/StdLib/Lib/lib2to3/Grammar*.pickle
+Src/StdLib/Lib/lib2to3/PatternGrammar*.pickle
+
+# created by side by side tests
+Tests/compat/*.log
+Tests/compat/*.pyc
+Tests/compat/*/*.pyc
+Tests/compat/sbs_library.dll
+Tests/compat/tempfile.txt
+Tests/Tools/stdmodules.py.stdout.log
+Tests/test_data.gz
+
+# created by tests
+abc.txt
+*-result.xml
+Src/StdLib/Lib/@test_*
+Src/StdLib/Lib/lib2to3/Grammar2.9.9.alpha.0.pickle
+Src/StdLib/Lib/lib2to3/PatternGrammar2.9.9.alpha.0.pickle
+Tests/ImportTestDir/
+Tests/cp15803/
+Tests/InheritanceTypes.dll
+Tests/OutterDir/
+Tests/ImpTest/
+Tests/StandAlone/
+Tests/another.py
+Tests/cached_type_dll.dll
+Tests/clruse*.py
+Tests/_fileio*
+Tests/cp7007/
+Tests/finaltest.dll
+Tests/foo
+Tests/imfpstart.tpy
+Tests/impcp13736.py
+Tests/impmodfrmpkg/
+Tests/onlyread.tmp
+Tests/onlywrite.tmp
+Tests/tempFile1.tpy
+Tests/temp_syspath_none.py
+Tests/test.dll
+Tests/test.pyil
+Tests/test.xaml
+Tests/testfile.tmp
+Tests/testilcode.dll
+Tests/the_dir/
+Tests/vbproptest0.*.dll
+tmp/
+Src/IronPythonConsole/App.config
+Src/IronPythonConsoleAny/App.config
+Src/IronPythonWindow/App.config
+Src/IronPythonWindowAny/App.config
+Package/nuget/**/*.nupkg
+*.binlog
+Package/Release/
+build-*.ProjectImports.zip
+*.trx
+*.un~
+/Src/ctypes_test/Win32/
+/Src/ctypes_test/x64/
+*.user
+*.o
+/Src/ctypes_test/*.pyd
+/Src/ctypes_test/*.pyd
+/Tests/modules/misc/test_data.gz
+/Package/deb/temp/
+/Package/pkg/temp/

@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ufwb version="1.17">
+    <grammar name="TAR" start="id:3" author="Johannes Schriewer" email="hallo@dunkelstern.de" fileextension="tar" uti="public.tar-archive" complete="yes">
+        <description>Grammar for TAR files</description>
+        <scripts>
+            <script name="Octal in ASCII representation" type="DataType" id="98">
+                <source language="Python"># custom data type script
+
+def parseByteRange(element, byteView, bitPos, bitLength, results):
+	# this method parses data starting at bitPos, bitLength bits are remaining
+	&quot;&quot;&quot;parseByteRange method&quot;&quot;&quot;
+
+	# how many bytes were processed?
+	processedBytes = 0
+	iteration = 0
+	byteRead = 0
+	octalString = &quot;&quot;
+	startPos = bytePos = bitPos / 8
+	sum = 999
+
+	# read octal bytes unless \0 or space is found
+	byteRead = byteView.readByte(bytePos)
+	bytePos += 1
+	while byteRead != 0x00 and byteRead != 0x20:
+		byteRead = byteView.readByte(bytePos)
+		bytePos += 1
+		if byteRead &gt;= ord('0') and byteRead &lt;= ord('7'):
+				octalString += chr(byteRead)
+		if bytePos &gt; startPos + bitLength/8:
+			break
+
+	processedBytes = bytePos - startPos
+
+	if (octalString != &quot;&quot;):
+		sum = int(octalString, 8)
+
+	# create and set new value
+	value = NumberValue()
+	value.setUnsigned(sum)
+
+	results.addElement(element, bitLength/8, iteration, value)
+
+	# return number of processed bytes
+	return bitLength/8
+
+def fillByteRange(value, byteArray, bitPos, bitLength):
+	# this method translates edited values back to the file
+	&quot;&quot;&quot;fillByteRange method&quot;&quot;&quot;
+
+	# get number edited by user
+	number = value.getUnsigned()
+
+	# hex string representation of edited number
+	octalString = &quot;0&quot; % (number)
+
+	currentPos = startPos = bitPos/8
+
+	# remove old hex string
+	byteArray.deleteRange(startPos, bitLength/8)
+
+	# insert hex string in file
+	for digit in octalString:
+		byteArray.insertByte(currentPos, ord(digit))
+		currentPos += 1
+
+	if currentPos - startPos &lt; bitLength/8:
+		range_end = startPos + bitLength/8
+		i = currentPos
+		while i &lt; range_end:		
+			byteArray.insertByte(i, 0x20)
+			i += 1
+</source>
+            </script>
+        </scripts>
+        <structure name="File" id="4" encoding="ISO_8859-1:1987" endian="big" signed="no">
+            <string name="Filename" id="5" fillcolor="FFD478" type="fixed-length" length="100"/>
+            <structure name="Mode" id="6" length="8">
+                <string name="Octal_designator" mustmatch="yes" id="7" type="fixed-length" length="2">
+                    <fixedvalues>
+                        <fixedvalue name="padding" value="00"/>
+                        <fixedvalue name="unknown" value="01"/>
+                    </fixedvalues>
+                </string>
+                <string name="Set_On_Execute" id="8" fillcolor="FF9300" type="fixed-length" length="2">
+                    <fixedvalues>
+                        <fixedvalue name="Set UID" value="40"/>
+                        <fixedvalue name="Set GID" value="20"/>
+                        <fixedvalue name="Set UID and GID" value="60"/>
+                        <fixedvalue name="Reserved" value="01"/>
+                        <fixedvalue name="None" value="00"/>
+                    </fixedvalues>
+                </string>
+                <string name="Access_Rights" mustmatch="yes" id="9" fillcolor="FF9300" repeatmin="3" repeatmax="3" type="fixed-length" length="1">
+                    <fixedvalues>
+                        <fixedvalue name="No Rights" value="0"/>
+                        <fixedvalue name="X" value="1"/>
+                        <fixedvalue name="W" value="2"/>
+                        <fixedvalue name="R" value="4"/>
+                        <fixedvalue name="RX" value="5"/>
+                        <fixedvalue name="RWX" value="7"/>
+                        <fixedvalue name="WX" value="3"/>
+                        <fixedvalue name="RW" value="6"/>
+                    </fixedvalues>
+                </string>
+            </structure>
+            <custom name="UID" id="11" fillcolor="73FDFF" length="8" script="id:98"/>
+            <custom name="GID" id="12" fillcolor="75D5FF" length="8" script="id:98"/>
+            <custom name="FileSize" id="13" fillcolor="D783FF" length="12" script="id:98"/>
+            <custom name="ModificationTime" id="14" length="12" script="id:98"/>
+            <custom name="Checksum" id="15" length="8" script="id:98"/>
+            <string name="Type" id="16" type="fixed-length" length="1">
+                <fixedvalues>
+                    <fixedvalue name="File" value="0"/>
+                    <fixedvalue name="File" value="\0"/>
+                    <fixedvalue name="Link" value="1"/>
+                    <fixedvalue name="Reserved" value="2"/>
+                    <fixedvalue name="CharacterDev" value="3"/>
+                    <fixedvalue name="BlockDev" value="4"/>
+                    <fixedvalue name="Directory" value="5"/>
+                    <fixedvalue name="FIFO" value="6"/>
+                    <fixedvalue name="Reserved" value="7"/>
+                    <fixedvalue name="Extended Header" value="x"/>
+                    <fixedvalue name="Global Extended Header" value="g"/>
+                    <fixedvalue name="Long Link" value="L"/>
+                </fixedvalues>
+            </string>
+            <string name="Linkname" id="17" type="fixed-length" length="100"/>
+            <binary name="Magic" mustmatch="yes" id="18" length="8">
+                <fixedvalues>
+                    <fixedvalue name="Gnu Old" value="7573746172202000"/>
+                    <fixedvalue name="POSIX" value="7573746172003030"/>
+                </fixedvalues>
+            </binary>
+            <string name="Username" id="19" fillcolor="73FDFF" type="fixed-length" length="32"/>
+            <string name="Groupname" id="20" fillcolor="75D5FF" type="fixed-length" length="32"/>
+            <custom name="Dev_Major" id="21" length="8" script="id:98"/>
+            <custom name="Dev_Minor" id="22" length="8" script="id:98"/>
+            <binary name="Prefix" id="23" strokecolor="FEFFFF" fillcolor="EAEAEA" length="155"/>
+            <binary name="HeaderPadding" id="24" strokecolor="FEFFFF" length="12"/>
+            <binary name="FileData" id="25" strokecolor="941100" fillcolor="FFE3E3" length="FileSize"/>
+            <binary name="FilePadding" id="26" strokecolor="FEFFFF" fillcolor="EAEAEA" length="select(mod(FileSize, 512) - 1, 0, 512 - mod(FileSize, 512), 512 - mod(FileSize, 512))"/>
+        </structure>
+        <structure name="TAR_File" id="3" length="0" encoding="UTF-8" endian="dynamic" signed="no">
+            <structref name="File" id="28" repeatmax="-1" structure="id:4"/>
+        </structure>
+    </grammar>
+</ufwb>
