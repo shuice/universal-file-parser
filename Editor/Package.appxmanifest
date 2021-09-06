@@ -9,12 +9,12 @@
   <Identity
     Name="WuhanBamiTechnologyCo.Ltd.InsiderUWP-synalyzeithex"
     Publisher="CN=15F87FBC-C7E4-4227-96C6-3D92CE9EAA5D"
-    Version="1.0.18.0" />
+    Version="1.0.20.0" />
 
   <mp:PhoneIdentity PhoneProductId="ef202750-4c33-4c3e-bd70-a9579d1f0af0" PhonePublisherId="00000000-0000-0000-0000-000000000000"/>
 
   <Properties>
-    <DisplayName>Insider UWP - synalyze it! hexinator alternative</DisplayName>
+    <DisplayName>Insider - Open source universal file parser</DisplayName>
     <PublisherDisplayName>Wuhan Bami Technology Co., Ltd.</PublisherDisplayName>
     <Logo>Assets\StoreLogo.png</Logo>
   </Properties>
